@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <div v-for="n in 10" :key="n">{{ n }}</div>
+    <h1 v-for="(menu, i) in menus" :key="i">{{ menu }} voi id la {{ i }}</h1>
+    <!-- Key la cac unique value -->
+    <button @click="menus.push('test')">Add new menu item</button>
   </div>
 </template>
 
@@ -10,7 +12,9 @@
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      menus: ["Home", "About", "Blog"],
+    };
   },
   methods: {},
 };
