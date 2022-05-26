@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <h1 v-for="(menu, i) in menus" :key="i">{{ menu }} voi id la {{ i }}</h1>
+    <div v-for="(menu, index) in menus" :key="index">
+      <h3>{{ menu }}</h3>
+      <p>{{ index }}</p>
+    </div>
   </div>
 </template>
 
