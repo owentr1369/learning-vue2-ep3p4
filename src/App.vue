@@ -1,10 +1,21 @@
 <template>
   <div id="app">
     <h1 v-for="(menu, i) in menus" :key="i">{{ menu }} voi id la {{ i }}</h1>
-    <div v-for="(menu, index) in menus" :key="index">
-      <h3>{{ menu }}</h3>
-      <p>{{ index }}</p>
-    </div>
+    <ul>
+      <li v-for="student in students" :key="student">{{ student.name }}</li>
+    </ul>
+    <ul>
+      <li v-for="student in students" :key="student">{{ student.age }}</li>
+    </ul>
+    <ul>
+      <li v-for="student in students" :key="student">{{ student.class }}</li>
+    </ul>
+    <ul>
+      <li v-for="value in students" :key="value">{{ value }}</li>
+      <li v-for="student in students" :key="student">
+        <div v-for="value in student" :key="value">{{ value }}</div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -16,6 +27,11 @@ export default {
   data() {
     return {
       menus: ["Home", "About", "Blog"],
+      students: [
+        { name: "Jon", age: 30, class: "CNTT" },
+        { name: "Steve", age: 32, class: "QTKD" },
+        { name: "Elon", age: 31, class: "CDT" },
+      ],
     };
   },
   methods: {},
