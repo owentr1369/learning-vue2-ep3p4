@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>hello</h1>
+    <h1 v-for="menu in menus" :key="menu">{{ menu }}</h1>
   </div>
 </template>
 
@@ -10,7 +10,9 @@
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      menus: ["Home", "About", "Blog"],
+    };
   },
   methods: {},
 };
